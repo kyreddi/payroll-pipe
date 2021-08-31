@@ -54,3 +54,8 @@ inner join resource_role r_role on r.id=r_role.resource_id
 inner join role ro on ro.id=r_role.role_id 
 inner join user_role ur on ro.id=ur.role_id
 inner join user u on u.id=ur.user_id where u.email_id='vara@mdits.com';
+
+
+url: "jdbc:mysql://mydb1.cuyhdnslcams.ap-south-1.rds.amazonaws.com:3306/sboauthdb"
+        username: "admin"
+        password: "password"

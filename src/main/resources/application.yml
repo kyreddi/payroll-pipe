@@ -4,9 +4,9 @@ spring:
         
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
-        url: "jdbc:mysql://localhost:3306/sboauthdb"
-        username: "root"
-        password: "root"
+        url: "jdbc:mysql://mydb1.cuyhdnslcams.ap-south-1.rds.amazonaws.com:3306/sboauthdb"
+        username: "admin"
+        password: "password"
        
                    
 config:

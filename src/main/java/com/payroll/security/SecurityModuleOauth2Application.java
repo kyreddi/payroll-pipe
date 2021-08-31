@@ -11,8 +11,8 @@ public class SecurityModuleOauth2Application {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SecurityModuleOauth2Application.class, args);
-		System.out.println("============================================");
-		System.out.println("Payroll Management System  | SPRINGBOOT RUNNING ON PORT 8080");
+//		System.out.println("============================================");
+//		System.out.println("Payroll Management System  | SPRINGBOOT RUNNING ON PORT 8080");
 
 		
 		
