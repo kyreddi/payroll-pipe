@@ -1,4 +1,4 @@
-package com.org.security;
+package com.payroll.security;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
