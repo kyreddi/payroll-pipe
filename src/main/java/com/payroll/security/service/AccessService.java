@@ -41,6 +41,8 @@ public interface AccessService {
 	
 
 	String resetPasswordById(String id, PasswordResetRequest passwordResetRequest) throws Exception;
+
+	public User getUserByid(String id);
 	
 	//public forgetPassword(String id)
 	

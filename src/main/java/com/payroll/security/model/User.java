@@ -30,15 +30,40 @@ public class User {
 	@Column(name="gender")
 	private String gender;
 	
-//	@Column(name="adhar_number")
-//	private String adhar_number;
+	@Column(name="salary")
+	private String salary;
 	
+@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", emailId=" + emailId + ", mobile=" + mobile + ", gender="
+				+ gender + ", salary=" + salary + ", password=" + password + "]";
+	}
+
+public User(String id, String name, String emailId, String mobile, String gender, String salary, String password) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.emailId = emailId;
+		this.mobile = mobile;
+		this.gender = gender;
+		this.salary = salary;
+		this.password = password;
+	}
+
 //	@Column(name="pan")
 //	private String pan;
 //	
 //	@Column(name="hired_date")
 //	private Date hiredDate;
 	
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
 	@Column(name="Password")
 	private String password;
 
@@ -102,19 +127,19 @@ public class User {
 	
 	
 
-	public User(String id, String name, String emailId, String mobile, String gender,
-			String password) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.emailId = emailId;
-		this.mobile = mobile;
-		this.gender = gender;
-//		this.adhar_number = adhar_number;
-//		this.pan = pan;
-//		this.hiredDate = hiredDate;
-		this.password = password;
-	}
+//	public User(String id, String name, String emailId, String mobile, String gender,
+//			String password) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.emailId = emailId;
+//		this.mobile = mobile;
+//		this.gender = gender;
+////		this.adhar_number = adhar_number;
+////		this.pan = pan;
+////		this.hiredDate = hiredDate;
+//		this.password = password;
+//	}
 
 	public String getMobile() {
 		return mobile;
@@ -140,35 +165,35 @@ public class User {
 //		this.pan = pan;
 //	}
 
-	public User(String name, String emailId, String password) {
-		super();
-		this.name = name;
-		this.emailId = emailId;
-		this.password = password;
-	}
+//	public User(String name, String emailId, String password) {
+//		super();
+//		this.name = name;
+//		this.emailId = emailId;
+//		this.password = password;
+//	}
 
-	public User(String emailId, String password) {
-		super();
-		this.emailId = emailId;
-		this.password = password;
-	}
+//	public User(String emailId, String password) {
+//		super();
+//		this.emailId = emailId;
+//		this.password = password;
+//	}
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String id, String name, String emailId, String gender,
-			String password) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.emailId = emailId;
-		this.gender = gender;
-//		this.adhar_number = adhar_number;
-//		this.pan = pan;
-		this.password = password;
-	}
+//	public User(String id, String name, String emailId, String gender,
+//			String password) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.emailId = emailId;
+//		this.gender = gender;
+////		this.adhar_number = adhar_number;
+////		this.pan = pan;
+//		this.password = password;
+//	}
 
 
 	

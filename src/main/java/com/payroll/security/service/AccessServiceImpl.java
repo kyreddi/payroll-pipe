@@ -45,6 +45,9 @@ public class AccessServiceImpl implements AccessService {
 	
 	@Autowired
 	User_RoleRepository userRoleRepository;
+	
+	
+	
 
 
 	public Resource addResource(Resource resource) {
@@ -89,14 +92,13 @@ public class AccessServiceImpl implements AccessService {
 
 		Role role=getByRoleName(resourcePerm.getRoleName());
 
-		System.out.println(resourcePerm.getPermissionList());
 
 		for(RolePermission p:resourcePerm.getPermissionList()) {
 
 			p.setRoleId(role.getRoleID());
 		}
 
-		System.out.println(resourcePerm);
+		
 
 		for(RolePermission p:resourcePerm.getPermissionList()) {
 
@@ -106,7 +108,7 @@ public class AccessServiceImpl implements AccessService {
 			rp.setCanEdit(p.isCanEdit());
 			rp.setCanAdd(p.isCanAdd());
 			rp.setCanDelete(p.isCanDelete());
-			System.out.println(rp);
+			
 			permissionRepository.save(rp);
 
 		}
@@ -115,7 +117,6 @@ public class AccessServiceImpl implements AccessService {
 	
 	@Override
 	public User getByEmailId(String emailId) {
-		// TODO Auto-generated method stub
 		User user = userRepository.findByEmailId(emailId);
 		return user;
 	}
@@ -130,7 +131,7 @@ public class AccessServiceImpl implements AccessService {
 		if(mydata.isPresent()) {
 
 			if(encoder.matches(passwordResetRequest.getOldPassword(), mydata.get().getPassword())) {
-				User user = new User(id,mydata.get().getName(),mydata.get().getEmailId(),mydata.get().getMobile(),mydata.get().getGender(),encoder.encode(passwordResetRequest.getNewPassword()));
+				User user = new User(id,mydata.get().getName(),mydata.get().getEmailId(),mydata.get().getMobile(),mydata.get().getGender(),mydata.get().getSalary(),encoder.encode(passwordResetRequest.getNewPassword()));
 				userRepository.save(user);
 				return "password set succesfully";
 			}
@@ -164,13 +165,12 @@ public class AccessServiceImpl implements AccessService {
 
 	@Override
 	public List<Role> getAllRoles() {
-		// TODO Auto-generated method stub
 		return roleRepository.findAll();
 	}
 
 	@Override
 	public String deleteRoleById(int roleId) {
-		// TODO Auto-generated method stub
+
 		rolePermissionRepository.deleteById(roleId);
 		 
 		 return "Deleted Role";
@@ -179,5 +179,9 @@ public class AccessServiceImpl implements AccessService {
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
 		}
+
+	public User getUserByid(String id) {
+		return userRepository.findByid(id);
+	}
 
 }

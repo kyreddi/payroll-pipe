@@ -67,8 +67,7 @@ public class AuthRestAPIs {
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
 
-		System.out.println(loginRequest.getUsername());
-		System.out.println(loginRequest.getPassword());
+		
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
@@ -79,7 +78,7 @@ public class AuthRestAPIs {
 		User data=accessAervice.getByEmailId(loginRequest.getUsername());
 		
 
-		return ResponseEntity.ok(new JwtResponse(data.getId(),data.getName(),jwt, userDetails.getUsername(),data.getMobile(),data.getGender(), userDetails.getAuthorities()));
+		return ResponseEntity.ok(new JwtResponse(data.getId(),data.getName(),jwt, userDetails.getUsername(),data.getMobile(),data.getGender(),data.getSalary(),userDetails.getAuthorities()));
 	}
 	
 	
@@ -93,7 +92,7 @@ public class AuthRestAPIs {
 	//NEW USER REGISTRATION & WEBCLIENT REQUEST TO EMAIL MICROSERVICE
 		@PostMapping("/signup")
 		public ResponseEntity<?> registerUser(@RequestBody SignUpForm signUpRequest) {
-			System.out.println(signUpRequest);
+			
 //			if (userRepository.existsByUsername(signUpRequest.getName())) {
 //				return new ResponseEntity<>(new ResponseMessage("Fail -> Username is already taken!"),
 //						HttpStatus.BAD_REQUEST);
@@ -105,8 +104,18 @@ public class AuthRestAPIs {
 			}
 
 			// Creating user's account
-			User user = new User(signUpRequest.getName(), signUpRequest.getEmailId(),
-					encoder.encode(signUpRequest.getPassword()));
+//			User user = new User(signUpRequest.getId(),signUpRequest.getName(), signUpRequest.getEmailId(),signUpRequest.getMobile(),signUpRequest.getGender(),signUpRequest.getSalary(),
+//					encoder.encode(signUpRequest.getPassword()));
+			
+			User user = new User();
+			user.setName(signUpRequest.getName());
+			user.setEmailId(signUpRequest.getEmailId());
+			user.setMobile(signUpRequest.getMobile());
+			user.setGender(signUpRequest.getGender());
+			user.setSalary(signUpRequest.getSalary());
+			user.setPassword(encoder.encode(signUpRequest.getPassword()));
+			
+			
 			
 		
 

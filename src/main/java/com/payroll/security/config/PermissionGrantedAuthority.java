@@ -31,7 +31,7 @@ public class PermissionGrantedAuthority implements GrantedAuthority{
 
 	@Override
 	public String getAuthority() {
-		// TODO Auto-generated method stub
+
 	
 		return resourcePermissions.toString();
 	}

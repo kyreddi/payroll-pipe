@@ -12,7 +12,7 @@ public class JwtResponse {
 	private String type = "Bearer";
 	private String username;
 	private String gender;
-//	private String adhar_number;
+	private String salary;
 //	private String pan;
 //	private String city;
 	private String mobile;
@@ -27,7 +27,7 @@ public class JwtResponse {
 	}
 	
 
-	public JwtResponse(String id, String name, String token, String username,String mobile, String gender,
+	public JwtResponse(String id, String name, String token, String username,String mobile, String gender, String salary,
 			 Collection<? extends GrantedAuthority> authorities) {
 		super();
 		this.id = id;
@@ -36,10 +36,20 @@ public class JwtResponse {
 		this.username = username;
 		this.mobile=mobile;
 		this.gender = gender;
-//		this.adhar_number = adhar_number;
+		this.salary = salary;
 //		this.pan=pan;
 //		this.hiredDate = hiredDate;
 		this.authorities = authorities;
+	}
+
+
+	public String getSalary() {
+		return salary;
+	}
+
+
+	public void setSalary(String salary) {
+		this.salary = salary;
 	}
 
 

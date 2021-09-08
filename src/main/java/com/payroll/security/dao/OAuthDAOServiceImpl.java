@@ -66,13 +66,13 @@ public class OAuthDAOServiceImpl implements OAuthDAOService {
 			});
 			
 			for( ResourcePermission resourcepermission : resourceRoleList) {
-				System.out.println(resourcepermission.getRole_id());
-				System.out.println(resourcepermission.getResource().getResourceName());
-				System.out.println(resourcepermission.getResource().getApiUrl());
-				System.out.println(resourcepermission.isCan_add());
-				System.out.println(resourcepermission.isCan_view());
-				System.out.println(resourcepermission.isCan_edit());
-				System.out.println(resourcepermission.isCan_delete());
+//				System.out.println(resourcepermission.getRole_id());
+//				System.out.println(resourcepermission.getResource().getResourceName());
+//				System.out.println(resourcepermission.getResource().getApiUrl());
+//				System.out.println(resourcepermission.isCan_add());
+//				System.out.println(resourcepermission.isCan_view());
+//				System.out.println(resourcepermission.isCan_edit());
+//				System.out.println(resourcepermission.isCan_delete());
 				//System.out.println(userEntity.getName());
 				
 			}
